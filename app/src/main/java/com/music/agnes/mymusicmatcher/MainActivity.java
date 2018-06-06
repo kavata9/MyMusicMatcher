@@ -9,23 +9,22 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends Activity {
-    public static final String TAG = MainActivity.class.getSimpleName();
     private Button mFindMusicMatcherButton;
-    private EditText mLocationEditText;
+    private EditText mTypeEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mLocationEditText = (EditText) findViewById(R.id.locationEditText);
+        mTypeEditText = (EditText) findViewById(R.id.typeEditText);
         mFindMusicMatcherButton = (Button) findViewById(R.id.findButton);
-        mFindMusicMatcherButton.setOnClickListener(new View.OnClickListener() {
 
+        mFindMusicMatcherButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String location = mLocationEditText.getText().toString();
-                Log.d(TAG, location);
+                String type = mTypeEditText.getText().toString();
                 Intent intent = new Intent(MainActivity.this, MusicSelectorActivity.class);
+                intent.putExtra("type", type);
                 startActivity(intent);
             }
         });
