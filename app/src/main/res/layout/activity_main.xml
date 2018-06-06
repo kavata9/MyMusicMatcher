@@ -14,12 +14,13 @@ tools:context="com.music.agnes.mymusicmatcher.MainActivity">
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:id="@+id/textView"/>
+        android:id="@+id/textView"
+        android:textColor="@color/colorPrimary"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find Restaurants"
+        android:text="Find MusicMatcher"
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
