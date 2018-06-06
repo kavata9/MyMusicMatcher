@@ -17,7 +17,7 @@ tools:context="com.music.agnes.mymusicmatcher.MainActivity">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MyMusicMatcher"
+        android:text="MyMusicMatcher:::"
         android:layout_marginTop="35dp"
         android:id="@+id/textView"
         android:textColor="@color/colorTextIcons"
@@ -31,7 +31,7 @@ tools:context="com.music.agnes.mymusicmatcher.MainActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Find MusicMatcher"
-        android:id="@+id/button"
+        android:id="@+id/findButton"
         android:background="@color/colorAccent"
         android:textColor="@color/colorTextIcons"
         android:layout_alignParentBottom="true"
