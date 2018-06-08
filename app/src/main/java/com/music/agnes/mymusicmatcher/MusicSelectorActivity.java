@@ -10,10 +10,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class MusicSelectorActivity extends Activity {
-    private TextView mTypeTextView;
-    private ListView mListView;
+    @BindView(R.id.typeTextView) TextView mTypeTextView;
+    @BindView(R.id.listView) ListView mListView;
 
     private String[] genres = new String[] {"Rock", "Country",
             "Jazz", "Pop", "Classic", "Oprah",
@@ -25,9 +28,10 @@ public class MusicSelectorActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_selector);
+        ButterKnife.bind(this);
 
-        mListView = (ListView) findViewById(R.id.listView);
-        mTypeTextView = (TextView) findViewById(R.id.typeTextView);
+//        mListView = (ListView) findViewById(R.id.listView);
+//        mTypeTextView = (TextView) findViewById(R.id.typeTextView);
 
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, genres);
