@@ -15,7 +15,6 @@ public class MusicSelectorActivity extends Activity {
     private TextView mTypeTextView;
     private ListView mListView;
 
-
     private String[] genres = new String[] {"Rock", "Country",
             "Jazz", "Pop", "Classic", "Oprah",
             "Africa", "Afrobeat", "Asia", "Zydeco",

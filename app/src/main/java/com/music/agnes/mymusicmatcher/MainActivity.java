@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +15,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends Activity {
     @BindView(R.id.findButton) Button mFindMusicMatcherButton;
     @BindView(R.id.typeEditText) EditText mTypeEditText;
-    @BindView(R.id.findButton) TextView mAppNameTextView;
+    @BindView(R.id.textView) TextView mAppNameTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +24,9 @@ public class MainActivity extends Activity {
         ButterKnife.bind(this);
 
 
-        mTypeEditText = (EditText) findViewById(R.id.typeEditText);
-        mFindMusicMatcherButton = (Button) findViewById(R.id.findButton);
-        mAppNameTextView = (TextView) findViewById(R.id.textView);
+//        mTypeEditText = (EditText) findViewById(R.id.typeEditText);
+//        mFindMusicMatcherButton = (Button) findViewById(R.id.findButton);
+//        mAppNameTextView = (TextView) findViewById(R.id.textView);
 
 
         Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/ostrich-regular.ttf");
