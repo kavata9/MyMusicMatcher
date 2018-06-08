@@ -19,10 +19,11 @@ public class MusicSelectorActivity extends Activity {
     @BindView(R.id.listView) ListView mListView;
 
     private String[] genres = new String[] {"Rock", "Country",
-            "Jazz", "Pop", "Classic", "Oprah",
-            "Africa", "Afrobeat", "Asia", "Zydeco",
-            "Ragge", "House", "Hip-Hope",
-            "Dancehall", "Rnb's"};
+            "Jazz", "Pop", "Classic", "Opera",
+             "Blues", "J-Pop", "World",
+            "Reggae","Hip-Hope", "R&B's"};
+
+    private String[] type = new String[] {"Soft rock", "Americana", "Crossover Jazz", "Dance Pop", "Chamber Music", "Acte de ballet", "Classic Blues", "J-Rock", "Africa", "Dancehall", "Contemporary R&B"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class MusicSelectorActivity extends Activity {
 //        mTypeTextView = (TextView) findViewById(R.id.typeTextView);
 
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, genres);
+        MyMusicSelectorArrayAdapter adapter = new MyMusicSelectorArrayAdapter(this, android.R.layout.simple_list_item_1, genres, type); //must match constructor!
         mListView.setAdapter(adapter);
 
 
