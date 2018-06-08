@@ -3,9 +3,12 @@ package com.music.agnes.mymusicmatcher;
 import android.content.Intent;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MusicSelectorActivity extends Activity {
@@ -28,6 +31,15 @@ public class MusicSelectorActivity extends Activity {
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, genres);
         mListView.setAdapter(adapter);
+
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String music = ((TextView)view).getText().toString();
+                Toast.makeText(MusicSelectorActivity.this, music, Toast.LENGTH_LONG).show();
+            }
+        });
 
 
 
