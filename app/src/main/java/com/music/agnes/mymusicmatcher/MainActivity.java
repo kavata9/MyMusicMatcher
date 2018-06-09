@@ -35,6 +35,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mFindMusicMatcherButton.setOnClickListener(this);
     }
 
+//    introduce views to onclick method
+
     @Override
             public void onClick(View v) {
                 if (v == mFindMusicMatcherButton) {
