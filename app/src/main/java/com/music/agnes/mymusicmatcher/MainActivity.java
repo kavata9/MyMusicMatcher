@@ -12,7 +12,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
     @BindView(R.id.findButton) Button mFindMusicMatcherButton;
     @BindView(R.id.typeEditText) EditText mTypeEditText;
     @BindView(R.id.textView) TextView mAppNameTextView;
@@ -32,14 +32,17 @@ public class MainActivity extends Activity {
         Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/ostrich-regular.ttf");
         mAppNameTextView.setTypeface(ostrichFont);
 
-        mFindMusicMatcherButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String type = mTypeEditText.getText().toString();
-                Intent intent = new Intent(MainActivity.this, MusicSelectorActivity.class);
-                intent.putExtra("type", type);
-                startActivity(intent);
-            }
-        });
+        mFindMusicMatcherButton.setOnClickListener(this);
     }
-}
+
+    @Override
+            public void onClick(View v) {
+                if (v == mFindMusicMatcherButton) {
+                    String location = mTypeEditText.getText().toString();
+                    Intent intent = new Intent(MainActivity.this, MusicSelectorActivity.class);
+                    intent.putExtra("location", location);
+                    startActivity(intent);
+                }
+            }
+        }
+
