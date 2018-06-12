@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import butterknife.ButterKnife;
 public class MusicSelectorActivity extends Activity {
     @BindView(R.id.typeTextView) TextView mTypeTextView;
     @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.aboutButton) Button mFindAboutButton;
 
     private String[] genres = new String[] {"Rock", "Country",
             "Jazz", "Pop", "Classic", "Opera",
@@ -46,9 +48,15 @@ public class MusicSelectorActivity extends Activity {
             }
         });
 
+        mFindAboutButton.setOnClickListener(new View.OnClickListener() {
 
-
-
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MusicSelectorActivity.this, AboutActivity.class);
+                startActivity(intent);
+                Toast.makeText(MusicSelectorActivity.this, "details", Toast.LENGTH_LONG).show();
+            }
+        });
         Intent intent = getIntent();
         String type = intent.getStringExtra("type");
         mTypeTextView.setText("Here are all the music genres list: " + type);

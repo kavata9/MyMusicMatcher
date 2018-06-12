@@ -16,13 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MusicSelectorActivity">
+        <activity android:name=".MusicSelectorActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.music.agnes.mymusicmatcher.MusicSelectorActivity">
-            </meta-data>
+                android:value="com.music.agnes.mymusicmatcher.MusicSelectorActivity" />
         </activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".AboutActivity"></activity>
     </application>
 
 </manifest>
