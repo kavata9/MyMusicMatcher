@@ -13,12 +13,12 @@ public class MusicService {
 
         OkHttpClient client = new OkHttpClient.Builder().build();
 
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.BASE_URL).newBuilder();
-        urlBuilder.addQueryParameter(Constants.API_PARAMETER,Constants.MUSIC_API_KEY);
-        urlBuilder.addQueryParameter(Constants.QUERY_PARAMETER,Artists);
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.MUSIC_BASE_URL).newBuilder();
+        urlBuilder.addQueryParameter(Constants.MUSIC_QUERY_PARAMETER ,artist);
         String url = urlBuilder.build().toString();
 
-        Request request= new Request.Builder()
+        Request request = new Request.Builder()
+                .header("Authorization", "Bearer " + Constants.MUSIC_API_KEY)
                 .url(url)
                 .build();
 

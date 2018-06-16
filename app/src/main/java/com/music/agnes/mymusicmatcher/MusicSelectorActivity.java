@@ -10,6 +10,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import java.io.IOException;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -60,5 +64,17 @@ public class MusicSelectorActivity extends Activity {
         Intent intent = getIntent();
         String type = intent.getStringExtra("type");
         mTypeTextView.setText("Here are all the music genres list: " + type);
+    }
+
+    private void getArtist(String name) {
+        final MusicService musicService = new MusicService();
+        MusicService.findArtists(name, new Callback() {
+
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+        });
     }
 }
