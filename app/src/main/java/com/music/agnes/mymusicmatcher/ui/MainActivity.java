@@ -1,4 +1,4 @@
-package com.music.agnes.mymusicmatcher;
+package com.music.agnes.mymusicmatcher.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.music.agnes.mymusicmatcher.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,9 +42,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
             public void onClick(View v) {
                 if (v == mFindMusicMatcherButton) {
-                    String location = mTypeEditText.getText().toString();
+                    String tracks= mTypeEditText.getText().toString();
                     Intent intent = new Intent(MainActivity.this, MusicSelectorActivity.class);
-                    intent.putExtra("location", location);
+                    intent.putExtra("tracks", tracks);
                     startActivity(intent);
                 }
             }

@@ -11,20 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MusicSelectorActivity">
+        <activity android:name=".ui.MusicSelectorActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.music.agnes.mymusicmatcher.MusicSelectorActivity" />
+                android:value="com.music.agnes.mymusicmatcher.ui.MusicSelectorActivity" />
         </activity>
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".ui.SignUpActivity" />
+        <activity android:name=".ui.AboutActivity"></activity>
     </application>
 
 </manifest>
