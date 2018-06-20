@@ -34,7 +34,7 @@ tools:context="com.music.agnes.mymusicmatcher.ui.MainActivity">
         android:layout_above="@+id/findButton"
         android:layout_marginBottom="10dp"
         android:padding="5dp"
-        android:hint="Enter Music Genres"
+        android:hint="Enter Artist name"
         android:layout_centerHorizontal="true" />
 
 

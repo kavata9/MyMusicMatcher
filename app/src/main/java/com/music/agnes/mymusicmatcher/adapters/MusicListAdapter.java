@@ -11,6 +11,7 @@ import com.music.agnes.mymusicmatcher.R;
 import com.music.agnes.mymusicmatcher.models.Track;
 import com.music.agnes.mymusicmatcher.models.TrackList;
 
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -60,6 +61,8 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.Trac
         }
 
         public void bindTrack(TrackList trackList) {
+
+//            Picasso.with(mContext).load(mMusics.track.gegetImageUrl()).into(mMusicsImageView);
             mTrackTextView.setText(trackList.getTrack().getTrackName());
             mMusicNameTextView.setText(trackList.getTrack().getAlbumName());
 //            mNameTextView.setText(trackList.getTrack().getAlbumName());
