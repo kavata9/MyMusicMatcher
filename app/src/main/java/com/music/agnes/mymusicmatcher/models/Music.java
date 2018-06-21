@@ -12,7 +12,7 @@ public class Music {
 
     @SerializedName("body")
     @Expose
-    private Body body;
+     Body body;
 
     /**
      * No args constructor for use in serialization

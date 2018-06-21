@@ -5,14 +5,13 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
-
 @Parcel
 
 public class TrackList {
 
     @SerializedName("track")
     @Expose
-    private Track track;
+     Track track;
 
     /**
      * No args constructor for use in serialization

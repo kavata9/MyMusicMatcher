@@ -12,19 +12,19 @@ public class MusicGenre {
 
     @SerializedName("music_genre_id")
     @Expose
-    private Integer musicGenreId;
+     Integer musicGenreId;
     @SerializedName("music_genre_parent_id")
     @Expose
-    private Integer musicGenreParentId;
+     Integer musicGenreParentId;
     @SerializedName("music_genre_name")
     @Expose
-    private String musicGenreName;
+     String musicGenreName;
     @SerializedName("music_genre_name_extended")
     @Expose
-    private String musicGenreNameExtended;
+     String musicGenreNameExtended;
     @SerializedName("music_genre_vanity")
     @Expose
-    private String musicGenreVanity;
+     String musicGenreVanity;
 
     /**
      * No args constructor for use in serialization

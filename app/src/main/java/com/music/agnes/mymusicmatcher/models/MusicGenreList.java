@@ -11,7 +11,7 @@ public class MusicGenreList {
 
     @SerializedName("music_genre")
     @Expose
-    private MusicGenre musicGenre;
+     MusicGenre musicGenre;
 
     /**
      * No args constructor for use in serialization

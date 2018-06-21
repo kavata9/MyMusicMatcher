@@ -7,13 +7,13 @@ import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
-@Parcel
 
+@Parcel
 public class PrimaryGenres {
 
     @SerializedName("music_genre_list")
     @Expose
-    private List<MusicGenreList> musicGenreList = null;
+     List<MusicGenreList> musicGenreList = null;
 
     /**
      * No args constructor for use in serialization

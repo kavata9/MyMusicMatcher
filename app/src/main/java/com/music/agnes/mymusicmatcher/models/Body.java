@@ -6,14 +6,14 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
-
 @Parcel
+
 public class Body {
 
 
     @SerializedName("track_list")
     @Expose
-    private List<TrackList> trackList = null;
+     List<TrackList> trackList = null;
 
     /**
      * No args constructor for use in serialization

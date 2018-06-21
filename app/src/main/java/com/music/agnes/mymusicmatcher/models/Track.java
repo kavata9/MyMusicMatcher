@@ -12,115 +12,115 @@ public class Track {
 
     @SerializedName("track_id")
     @Expose
-    private Integer trackId;
+     Integer trackId;
     @SerializedName("track_mbid")
     @Expose
-    private String trackMbid;
+     String trackMbid;
     @SerializedName("track_isrc")
     @Expose
-    private String trackIsrc;
+     String trackIsrc;
     @SerializedName("track_spotify_id")
     @Expose
-    private String trackSpotifyId;
+     String trackSpotifyId;
     @SerializedName("track_soundcloud_id")
     @Expose
-    private String trackSoundcloudId;
+     String trackSoundcloudId;
     @SerializedName("track_xboxmusic_id")
     @Expose
-    private String trackXboxmusicId;
+     String trackXboxmusicId;
     @SerializedName("track_name")
     @Expose
-    private String trackName;
+     String trackName;
     @SerializedName("track_name_translation_list")
     @Expose
-    private List<Object> trackNameTranslationList = null;
+     List<String> trackNameTranslationList = null;
     @SerializedName("track_rating")
     @Expose
-    private Integer trackRating;
+     Integer trackRating;
     @SerializedName("track_length")
     @Expose
-    private Integer trackLength;
+     Integer trackLength;
     @SerializedName("commontrack_id")
     @Expose
-    private Integer commontrackId;
+     Integer commontrackId;
     @SerializedName("instrumental")
     @Expose
-    private Integer instrumental;
+     Integer instrumental;
     @SerializedName("explicit")
     @Expose
-    private Integer explicit;
+     Integer explicit;
     @SerializedName("has_lyrics")
     @Expose
-    private Integer hasLyrics;
+     Integer hasLyrics;
     @SerializedName("has_lyrics_crowd")
     @Expose
-    private Integer hasLyricsCrowd;
+     Integer hasLyricsCrowd;
     @SerializedName("has_subtitles")
     @Expose
-    private Integer hasSubtitles;
+     Integer hasSubtitles;
     @SerializedName("has_richsync")
     @Expose
-    private Integer hasRichsync;
+     Integer hasRichsync;
     @SerializedName("num_favourite")
     @Expose
-    private Integer numFavourite;
+     Integer numFavourite;
     @SerializedName("lyrics_id")
     @Expose
-    private Integer lyricsId;
+     Integer lyricsId;
     @SerializedName("subtitle_id")
     @Expose
-    private Integer subtitleId;
+     Integer subtitleId;
     @SerializedName("album_id")
     @Expose
-    private Integer albumId;
+     Integer albumId;
     @SerializedName("album_name")
     @Expose
-    private String albumName;
+     String albumName;
     @SerializedName("artist_id")
     @Expose
-    private Integer artistId;
+     Integer artistId;
     @SerializedName("artist_mbid")
     @Expose
-    private String artistMbid;
+     String artistMbid;
     @SerializedName("artist_name")
     @Expose
-    private String artistName;
+     String artistName;
     @SerializedName("album_coverart_100x100")
     @Expose
-    private String albumCoverart100x100;
+     String albumCoverart100x100;
     @SerializedName("album_coverart_350x350")
     @Expose
-    private String albumCoverart350x350;
+     String albumCoverart350x350;
     @SerializedName("album_coverart_500x500")
     @Expose
-    private String albumCoverart500x500;
+     String albumCoverart500x500;
     @SerializedName("album_coverart_800x800")
     @Expose
-    private String albumCoverart800x800;
+     String albumCoverart800x800;
     @SerializedName("track_share_url")
     @Expose
-    private String trackShareUrl;
+     String trackShareUrl;
     @SerializedName("track_edit_url")
     @Expose
-    private String trackEditUrl;
+     String trackEditUrl;
     @SerializedName("commontrack_vanity_id")
     @Expose
-    private String commontrackVanityId;
+     String commontrackVanityId;
     @SerializedName("restricted")
     @Expose
-    private Integer restricted;
+     Integer restricted;
     @SerializedName("first_release_date")
     @Expose
-    private String firstReleaseDate;
+     String firstReleaseDate;
     @SerializedName("updated_time")
     @Expose
-    private String updatedTime;
+     String updatedTime;
     @SerializedName("primary_genres")
     @Expose
-    private PrimaryGenres primaryGenres;
+     PrimaryGenres primaryGenres;
     @SerializedName("secondary_genres")
     @Expose
-    private SecondaryGenres secondaryGenres;
+     SecondaryGenres secondaryGenres;
 
     /**
      * No args constructor for use in serialization
@@ -169,7 +169,7 @@ public class Track {
      * @param commontrackId
      * @param trackLength
      */
-    public Track(Integer trackId, String trackMbid, String trackIsrc, String trackSpotifyId, String trackSoundcloudId, String trackXboxmusicId, String trackName, List<Object> trackNameTranslationList, Integer trackRating, Integer trackLength, Integer commontrackId, Integer instrumental, Integer explicit, Integer hasLyrics, Integer hasLyricsCrowd, Integer hasSubtitles, Integer hasRichsync, Integer numFavourite, Integer lyricsId, Integer subtitleId, Integer albumId, String albumName, Integer artistId, String artistMbid, String artistName, String albumCoverart100x100, String albumCoverart350x350, String albumCoverart500x500, String albumCoverart800x800, String trackShareUrl, String trackEditUrl, String commontrackVanityId, Integer restricted, String firstReleaseDate, String updatedTime, PrimaryGenres primaryGenres, SecondaryGenres secondaryGenres) {
+    public Track(Integer trackId, String trackMbid, String trackIsrc, String trackSpotifyId, String trackSoundcloudId, String trackXboxmusicId, String trackName, List<String> trackNameTranslationList, Integer trackRating, Integer trackLength, Integer commontrackId, Integer instrumental, Integer explicit, Integer hasLyrics, Integer hasLyricsCrowd, Integer hasSubtitles, Integer hasRichsync, Integer numFavourite, Integer lyricsId, Integer subtitleId, Integer albumId, String albumName, Integer artistId, String artistMbid, String artistName, String albumCoverart100x100, String albumCoverart350x350, String albumCoverart500x500, String albumCoverart800x800, String trackShareUrl, String trackEditUrl, String commontrackVanityId, Integer restricted, String firstReleaseDate, String updatedTime, PrimaryGenres primaryGenres, SecondaryGenres secondaryGenres) {
         super();
         this.trackId = trackId;
         this.trackMbid = trackMbid;
@@ -266,11 +266,11 @@ public class Track {
         this.trackName = trackName;
     }
 
-    public List<Object> getTrackNameTranslationList() {
+    public List<String> getTrackNameTranslationList() {
         return trackNameTranslationList;
     }
 
-    public void setTrackNameTranslationList(List<Object> trackNameTranslationList) {
+    public void setTrackNameTranslationList(List<String> trackNameTranslationList) {
         this.trackNameTranslationList = trackNameTranslationList;
     }
 

@@ -7,13 +7,14 @@ import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
+
 @Parcel
 
 public class SecondaryGenres {
 
     @SerializedName("music_genre_list")
     @Expose
-    private List<Object> musicGenreList = null;
+     List<String> musicGenreList = null;
 
     /**
      * No args constructor for use in serialization
@@ -26,16 +27,16 @@ public class SecondaryGenres {
      * 
      * @param musicGenreList
      */
-    public SecondaryGenres(List<Object> musicGenreList) {
+    public SecondaryGenres(List<String> musicGenreList) {
         super();
         this.musicGenreList = musicGenreList;
     }
 
-    public List<Object> getMusicGenreList() {
+    public List<String> getMusicGenreList() {
         return musicGenreList;
     }
 
-    public void setMusicGenreList(List<Object> musicGenreList) {
+    public void setMusicGenreList(List<String> musicGenreList) {
         this.musicGenreList = musicGenreList;
     }
 
