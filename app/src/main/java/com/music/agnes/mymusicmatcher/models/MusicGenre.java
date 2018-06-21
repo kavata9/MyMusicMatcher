@@ -4,6 +4,10 @@ package com.music.agnes.mymusicmatcher.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
+
 public class MusicGenre {
 
     @SerializedName("music_genre_id")

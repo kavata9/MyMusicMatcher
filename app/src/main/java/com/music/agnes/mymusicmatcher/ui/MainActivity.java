@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             public void onClick(View v) {
                 if (v == mFindMusicMatcherButton) {
                     String tracks= mTypeEditText.getText().toString();
-                    Intent intent = new Intent(MainActivity.this, MusicSelectorActivity.class);
+                    Intent intent = new Intent(MainActivity.this, MusicSelectorListActivity.class);
                     intent.putExtra("tracks", tracks);
                     startActivity(intent);
                 }

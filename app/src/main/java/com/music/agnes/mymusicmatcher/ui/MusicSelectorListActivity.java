@@ -5,13 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.music.agnes.mymusicmatcher.R;
 import com.music.agnes.mymusicmatcher.adapters.MusicListAdapter;
-import com.music.agnes.mymusicmatcher.models.Track;
 import com.music.agnes.mymusicmatcher.models.TrackList;
 import com.music.agnes.mymusicmatcher.services.MusicService;
 
@@ -25,8 +21,8 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class MusicSelectorActivity extends AppCompatActivity {
-    public static final String TAG = MusicSelectorActivity.class.getSimpleName();
+public class MusicSelectorListActivity extends AppCompatActivity {
+    public static final String TAG = MusicSelectorListActivity.class.getSimpleName();
 
 //    @BindView(R.id.MusicNameTextView) TextView MusicNameTextView;
 //    @BindView(R.id.listView) ListView mListView;
@@ -63,13 +59,13 @@ public class MusicSelectorActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) {
                 mMusics = musicService.artistResults(response);
 
-                MusicSelectorActivity.this.runOnUiThread(new Runnable() {
+                MusicSelectorListActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         mAdapter = new MusicListAdapter(getApplicationContext(), mMusics);
                         mRecyclerView.setAdapter(mAdapter);
                         RecyclerView.LayoutManager layoutManager =
-                                new LinearLayoutManager(MusicSelectorActivity.this);
+                                new LinearLayoutManager(MusicSelectorListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
                     }
