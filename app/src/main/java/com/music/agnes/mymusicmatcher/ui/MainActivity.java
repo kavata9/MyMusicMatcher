@@ -9,18 +9,34 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.music.agnes.mymusicmatcher.Constants;
 import com.music.agnes.mymusicmatcher.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
 public class MainActivity extends Activity implements View.OnClickListener {
+
+    private DatabaseReference mSearchedArtistReference;
+
+
     @BindView(R.id.findButton) Button mFindMusicMatcherButton;
     @BindView(R.id.typeEditText) EditText mTypeEditText;
     @BindView(R.id.textView) TextView mAppNameTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+//introduceing ref to firebase  to write into it
+
+       mSearchedArtistReference = FirebaseDatabase
+              .getInstance()
+                .getReference()
+               .child(Constants.FIREBASE_CHILD_SEARCHED_ARTIST);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
@@ -43,10 +59,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
             public void onClick(View v) {
                 if (v == mFindMusicMatcherButton) {
                     String tracks= mTypeEditText.getText().toString();
+
+                    saveArtistToFirebase(tracks);
+
                     Intent intent = new Intent(MainActivity.this, MusicSelectorListActivity.class);
                     intent.putExtra("tracks", tracks);
                     startActivity(intent);
                 }
             }
-        }
+
+
+    public void saveArtistToFirebase(String artist) {
+       mSearchedArtistReference.push().setValue(artist);
+    }
+
+}
 
