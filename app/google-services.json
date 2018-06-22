@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "890561354576",
+    "firebase_url": "https://my-musicmatcher.firebaseio.com",
+    "project_id": "my-musicmatcher",
+    "storage_bucket": "my-musicmatcher.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890561354576:android:2844a66f7b11cc4f",
+        "android_client_info": {
+          "package_name": "com.music.agnes.mymusicmatcher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890561354576-m5le791ldljrig4fapj2otubpsd2c9nh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.music.agnes.mymusicmatcher",
+            "certificate_hash": "d07908193abc66efc464abf0dc541bcc7bbe7bdc"
+          }
+        },
+        {
+          "client_id": "890561354576-mvt3sel59csvj90vj9p08peotqn1pqgc.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "890561354576-mvt3sel59csvj90vj9p08peotqn1pqgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSp0ZL8QVjFTZeVlXAcBUtzPWEmOI7BnM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890561354576-mvt3sel59csvj90vj9p08peotqn1pqgc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
