@@ -30,12 +30,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-//introduceing ref to firebase  to write into it
+//introducing ref to firebase  to write into it
 
        mSearchedArtistReference = FirebaseDatabase
               .getInstance()
                 .getReference()
-               .child(Constants.FIREBASE_CHILD_SEARCHED_ARTIST);
+               .child(Constants.FIREBASE_CHILD_SEARCHED_ARTIST);//pinpoint artist node
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

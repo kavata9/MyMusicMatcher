@@ -8,8 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.music.agnes.mymusicmatcher.Constants;
 import com.music.agnes.mymusicmatcher.R;
 import com.music.agnes.mymusicmatcher.models.TrackList;
 
@@ -19,7 +23,8 @@ import org.parceler.Parcels;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MusicDetailFragment extends Fragment {
+public class MusicDetailFragment extends Fragment implements View.OnClickListener {
+
     @BindView(R.id.artistImageView) ImageView mImageLabel;
     @BindView(R.id.artistNameTextView) TextView mNameLabel;
     @BindView(R.id.trackNameTextView) TextView mTrackNameLabel;
@@ -49,11 +54,34 @@ public class MusicDetailFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_music_detail, container, false);
         ButterKnife.bind(this, view);
 
+
         mNameLabel.setText(mTrackList.getTrack().getArtistName());
         mTrackNameLabel.setText(mTrackList.getTrack().getTrackName());
 //        mRatingLabel.setText((mTrackList.getTrack().getTrackRating()));
         mAlbumLabel.setText((mTrackList.getTrack().getAlbumName()));
 
+
+        mAlbumLabel.setOnClickListener(this);
+        mNameLabel.setOnClickListener(this);
+        mTrackNameLabel.setOnClickListener(this);
+
+        mSaveMusicButton.setOnClickListener(this);
+
+
+
+
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if (v == mSaveMusicButton) {
+            DatabaseReference artistsRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_ARTISTS);
+            artistsRef.push().setValue(mTrackList);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -6,4 +6,5 @@ public class Constants {
     public static final String MUSIC_QUERY_PARAMETER = "q_artist";
     public static final String PARAM_KEY = "apikey";
     public static final String FIREBASE_CHILD_SEARCHED_ARTIST = "searchedArtist";
+    public static final String FIREBASE_CHILD_ARTISTS = "artists";
 }
