@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -26,6 +27,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @BindView(R.id.findButton) Button mFindMusicMatcherButton;
     @BindView(R.id.typeEditText) EditText mTypeEditText;
     @BindView(R.id.textView) TextView mAppNameTextView;
+    @BindView(R.id.savedArtistButton) Button msavedArtistButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mAppNameTextView.setTypeface(ostrichFont);
 
         mFindMusicMatcherButton.setOnClickListener(this);
+        msavedArtistButton.setOnClickListener(this);
     }
 
 //    introduce views to onclick method
@@ -58,15 +61,24 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
             public void onClick(View v) {
                 if (v == mFindMusicMatcherButton) {
-                    String tracks= mTypeEditText.getText().toString();
+                    String tracks = mTypeEditText.getText().toString();
 
                     saveArtistToFirebase(tracks);
 
                     Intent intent = new Intent(MainActivity.this, MusicSelectorListActivity.class);
                     intent.putExtra("tracks", tracks);
                     startActivity(intent);
+
                 }
-            }
+
+                    if (v == msavedArtistButton) {
+                        Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, SavedArtistListActivity.class);
+                        startActivity(intent);
+
+                    }
+                }
+
 
 
     public void saveArtistToFirebase(String artist) {
