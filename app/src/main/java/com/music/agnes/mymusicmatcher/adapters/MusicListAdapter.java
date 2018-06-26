@@ -55,7 +55,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.Trac
     public class TrackViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.musicsImageView) ImageView mMusicsImageView;
         @BindView(R.id.MusicNameTextView) TextView mMusicNameTextView;
-        @BindView(R.id.TrackNameTextView) TextView mTrackTextView;
+//        @BindView(R.id.TrackNameTextView) TextView mTrackTextView;
         @BindView(R.id.ArtistNameTextView) TextView mArtistTextView;
         @BindView(R.id.GenresNameTextView) TextView mCategoryTextView;
         @BindView(R.id.ratingTextView) TextView mRatingTextView;
@@ -75,7 +75,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.Trac
         public void bindTrack(TrackList trackList) {
 
 
-            mTrackTextView.setText(trackList.getTrack().getTrackName());
+//            mTrackTextView.setText(trackList.getTrack().getTrackName());
             mMusicNameTextView.setText(trackList.getTrack().getAlbumName());
             mArtistTextView.setText(trackList.getTrack().getArtistName());
             mCategoryTextView.setText(trackList.getTrack().getPrimaryGenres().toString());

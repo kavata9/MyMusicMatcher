@@ -39,12 +39,12 @@ public class FirebaseMusicViewHolder extends RecyclerView.ViewHolder implements 
 
         TextView ArtistNameTextView =  mView.findViewById(R.id.ArtistNameTextView);
         TextView AlbumNameTextView =  mView.findViewById(R.id.AlbumNameTextView);
-        TextView ratingTextView =  mView.findViewById(R.id.ratingTextView);
+//        TextView ratingTextView =  mView.findViewById(R.id.ratingTextView);
 
 
         ArtistNameTextView.setText(trackList.getTrack().getArtistName());
         AlbumNameTextView.setText(trackList.getTrack().getAlbumName());
-        ratingTextView.setText(trackList.getTrack().getTrackRating());
+//        ratingTextView.setText(trackList.getTrack().getTrackRating());
 
 
     }

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context="com.music.agnes.mymusicmatcher.ui.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity"
+    android:background="#000000">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -11,8 +12,6 @@ tools:context="com.music.agnes.mymusicmatcher.ui.MainActivity">
         android:id="@+id/imageView"
         android:src="@drawable/backgroundmusic"
         android:scaleType="centerCrop" />
-
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,29 +23,17 @@ tools:context="com.music.agnes.mymusicmatcher.ui.MainActivity">
         android:textColor="@color/colorTextIcons"
         android:textSize="60sp"
         android:textStyle="bold"
-        android:id="@+id/textView"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/typeEditText"
-        android:background="@color/colorTextIcons"
-        android:layout_above="@+id/findButton"
-        android:layout_marginBottom="10dp"
-        android:padding="5dp"
-        android:hint="Enter Artist name"
-        android:layout_centerHorizontal="true" />
-
+        android:id="@+id/appNameTextView"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Find MusicMatcher"
-        android:id="@+id/findButton"
+        android:text="Find Artists"
+        android:id="@+id/findMusicMatcherButton"
         android:background="@color/colorAccent"
         android:textColor="@color/colorTextIcons"
         android:visibility="visible"
-        android:layout_above="@+id/savedArtistButton"
+        android:layout_above="@+id/savedArtistsButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="10dp" />
@@ -55,13 +42,12 @@ tools:context="com.music.agnes.mymusicmatcher.ui.MainActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="My Saved Artists"
-        android:id="@+id/savedArtistButton"
+        android:id="@+id/savedArtistsButton"
         android:background="@color/colorAccent"
         android:textColor="@color/colorTextIcons"
         android:visibility="visible"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
-
 
 </RelativeLayout>

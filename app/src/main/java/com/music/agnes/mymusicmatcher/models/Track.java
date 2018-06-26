@@ -120,7 +120,7 @@ public class Track {
      PrimaryGenres primaryGenres;
     @SerializedName("secondary_genres")
     @Expose
-     SecondaryGenres secondaryGenres;
+     transient SecondaryGenres secondaryGenres;
 
     /**
      * No args constructor for use in serialization

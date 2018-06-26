@@ -1,11 +1,19 @@
 package com.music.agnes.mymusicmatcher.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
+import com.music.agnes.mymusicmatcher.Constants;
 import com.music.agnes.mymusicmatcher.R;
 import com.music.agnes.mymusicmatcher.adapters.MusicListAdapter;
 import com.music.agnes.mymusicmatcher.models.TrackList;
@@ -22,13 +30,13 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class MusicSelectorListActivity extends AppCompatActivity {
-    public static final String TAG = MusicSelectorListActivity.class.getSimpleName();
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+    private String mRecentTrack;
 
-//    @BindView(R.id.MusicNameTextView) TextView MusicNameTextView;
-//    @BindView(R.id.listView) ListView mListView;
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
-    private MusicListAdapter mAdapter;
 
+    private MusicListAdapter mAdapter;
     public List<TrackList> mMusics = new ArrayList<>();
 
     @Override
@@ -38,17 +46,57 @@ public class MusicSelectorListActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent intent = getIntent();
-        String tracks = intent.getStringExtra("tracks");
+        String track = intent.getStringExtra("track");
 
-//        MusicNameTextView.setText("Here are all the list of song : " + tracks);
+        getTracks(track);
 
-        getTracks(tracks);
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentTrack = mSharedPreferences.getString(Constants.PREFERENCES_ARTIST_KEY, null);
+
+        if (mRecentTrack != null) {
+            getTracks(mRecentTrack);
+        }
     }
 
-    private void getTracks(final String tracks) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_search, menu);
+        ButterKnife.bind(this);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                addToSharedPreferences(query);
+                getTracks(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void getTracks(String track) {
         final MusicService musicService = new MusicService();
 
-        musicService.findArtists(tracks, new Callback() {
+        musicService.findArtists(track, new Callback() {
 
             @Override
             public void onFailure(Call call, IOException e) {
@@ -60,12 +108,12 @@ public class MusicSelectorListActivity extends AppCompatActivity {
                 mMusics = musicService.artistResults(response);
 
                 MusicSelectorListActivity.this.runOnUiThread(new Runnable() {
+
                     @Override
                     public void run() {
                         mAdapter = new MusicListAdapter(getApplicationContext(), mMusics);
                         mRecyclerView.setAdapter(mAdapter);
-                        RecyclerView.LayoutManager layoutManager =
-                                new LinearLayoutManager(MusicSelectorListActivity.this);
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MusicSelectorListActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
                     }
@@ -73,4 +121,9 @@ public class MusicSelectorListActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void addToSharedPreferences(String artist) {
+        mEditor.putString(Constants.PREFERENCES_ARTIST_KEY, artist).apply();
+    }
+
 }
