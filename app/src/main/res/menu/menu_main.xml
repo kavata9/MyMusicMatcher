@@ -2,8 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/baseline_youtube_searched_for_black_24dp"
+        app:showAsAction="always"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="Search">
+    </item>
+
+
+    <item
         android:id="@+id/action_logout"
         android:title="Logout"
         android:visible="true"
         app:showAsAction="never" />
+
+
 </menu>
