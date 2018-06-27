@@ -68,7 +68,7 @@ public class MusicSelectorListActivity extends AppCompatActivity {
         mEditor = mSharedPreferences.edit();
 
         MenuItem menuItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+        SearchView searchView = (SearchView) menuItem.getActionView();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
