@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.LogInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,11 +23,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.music.agnes.mymusicmatcher.ui.MusicSelectorListActivity" />
         </activity>
-        <activity android:name=".ui.LogInActivity" ></activity>
+        <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.AboutActivity" />
         <activity android:name=".ui.MusicDetailActivity" />
         <activity android:name=".ui.SavedArtistListActivity" />
-        <activity android:name=".ui.CreateAccountActivity"></activity>
+        <activity android:name=".ui.CreateAccountActivity">
+
+        </activity>
     </application>
 
 </manifest>
