@@ -9,6 +9,7 @@ import org.parceler.Parcel;
 
 @Parcel
 public class Track {
+    private String pushId;
 
     @SerializedName("track_id")
     @Expose
@@ -128,6 +129,7 @@ public class Track {
      */
     public Track() {
     }
+
 
     /**
      * 
@@ -504,6 +506,13 @@ public class Track {
 
     public void setSecondaryGenres(SecondaryGenres secondaryGenres) {
         this.secondaryGenres = secondaryGenres;
+    }
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 }

@@ -19,6 +19,7 @@ public class TrackList {
      */
     public TrackList() {
     }
+    private String pushId;
 
     /**
      * 
@@ -37,4 +38,12 @@ public class TrackList {
         this.track = track;
     }
 
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
 }
