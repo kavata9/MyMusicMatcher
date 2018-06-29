@@ -1,18 +1,25 @@
 # MyMusicMatcher
-[Link to deployed app.]()
+[Link to deployed app.](https://github.com/kavata9/MyMusicMatcher)
 
-### This is an appication that a user can be able to carry out music search.
+### This is an application that a user can be able to carry out music search.Through inputting of the artist name and also save their favorite artist tracks and songs .
 
 ### The following are the specifications of this application:
 1.A user is able to search a music type from the search button through a text editor button.
+2.A user can sign up  inorder to access the app.
+3.A user can log in and be authenticated using firebase.
+4.A user can save their favorite artist track and store it via a firebase database.
+5.A user can view their saved artist tracks.
 
 
 ### The technologies used are:
 1. Java Programming Language
 2. Android studio.
-3. Gradle
+3. Gradle.
+4.Firebase.
+5.MusixMatcher API.
 
-### Author:
+
+### Author:Agnes K. Musyoka.
 #### [Agnes Musyoka](https://github.com/kavata9/MyMusicMatcher)
 ### License
 **MIT License**
